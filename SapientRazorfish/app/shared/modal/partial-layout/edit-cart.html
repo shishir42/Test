@@ -1,0 +1,48 @@
+﻿<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
+    <span aria-hidden="true">&times;</span>
+</button>
+<div class="app-cart-popup">
+    <div class="popover-left-content app-float-left">
+        <div>
+            <ul>
+                <li class="app-text-align">
+                    <div class="app-horizontal-line"></div>
+                </li>
+                <li class="app-edit-title app-text-align ellipsis" ng-bind="modalObject.modalObject.p_name"></li>
+                <li class="app-edit-price app-text-align">
+                  <div class="app-display-inline-flex">
+                    <div ng-bind="modalObject.modalObject.c_currency"></div>
+                    <div ng-bind="modalObject.modalObject.p_price"></div>
+                  </div>
+                </li>
+                <li class="app-edit-color">
+                    <div class="app-select-text">PAISLEY</div>
+                    <div class="app-select-btn app-display-flex">
+                        <div><button class="btn btn-primary btn-sm btn-responsive app-select-btn"></button></div>
+                        <div class="app-select-left-btn"><button class="btn btn-primary btn-sm btn-responsive app-select-btn app-nonselect-btn"></button></div>
+                    </div>
+                </li>
+                <li class="app-display-flex app-select-option">
+                    <div class="form-group">
+                        <label for="sort" class="col-sm-2 control-label"> SIZE: </label>
+                        <div class="col-sm-10">
+                          <select class="form-control" ng-model = "modalObject.modalObject.p_selected_size.code" ng-options="c as c.code for c in modalObject.modalObject.p_available_options.sizes"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sort" class="col-sm-2 control-label"> QTY: </label>
+                        <div class="col-sm-10">
+                            <input type="number" class="app-qty-item app-input-text" ng-model="modalObject.modalObject.p_quantity"/>
+                        </div>
+                    </div>
+                </li>
+                <li class="app-addToBag">
+                  <button class="btn btn-primary btn-sm btn-responsive" ng-click="close()">ADD TO BAG</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="popover-right-content app-float-left">
+        <img ng-src="assets/images/{{modalObject.modalObject.p_id}}.jpg" alt="" />
+    </div>
+</div>

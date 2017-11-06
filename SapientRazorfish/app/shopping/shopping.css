@@ -1,0 +1,297 @@
+﻿.app-container-content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 1%;
+}
+
+.app-title {
+    font-size: 300%;
+    color: #cbcbcb;
+    padding: 0;
+}
+
+.app-item-table-container {
+    font-size: 100%;
+    color: #333333;
+    padding-top: 25px;
+}
+
+.app-item-detail-conatiner{
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.app-item-header-container {
+    border-top: 2px solid #cbcbcb;
+    border-bottom: 2px solid #cbcbcb;
+    height: 60px;
+    padding: 1%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.app-header-left-container{
+
+}
+
+.app-header-right-container{
+
+}
+.app-item-header {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.app-item-count {
+    width: 30%;
+    height: 100%;
+}
+
+
+.app-item-width {
+    width: 30%;
+}
+
+.app-item-qty {
+
+}
+
+.app-item-price {
+
+}
+
+.app-item-right-container{
+  font-size: 100%;
+  width: 100%;
+}
+
+.app-text-style-color{
+  padding-left: 30%;
+}
+
+.app-qty-item{
+  width: 30%;
+  text-align: center;
+}
+
+.app-bottom-container{
+  height: 100%;
+  width: 100%;
+  padding-top: 5%;
+  display: flex;
+}
+
+.app-bottom-left-container{
+  width: 25%;
+}
+
+.app-bottom-right-container{
+  width: 75%;
+}
+
+.app-promotext{
+  width: 50%;
+  color: #cbcbcb;
+}
+
+.app-applycode{
+  width : 40%;
+}
+
+.app-applycode-box{
+  width: 95%;
+}
+
+.app-applyCodeBtn{
+  width: 10%;
+}
+
+.app-total-coantainer{
+  width: 100%;
+  padding-top: 5%;
+}
+
+.app-continue-shopping{
+  padding-top: 3%;
+  width: 100%;
+}
+
+.app-checkout-btn{
+  padding-left: 5%;
+}
+
+.app-secure-shopping{
+  padding-top: 4%;
+  width: 100%;
+}
+
+.app-secure-text{
+  padding-right: 1%;
+}
+
+.app-left-padding{
+  padding-left: 30%;
+}
+
+.app-modify{
+  width: 100%; padding-top: 20%;
+}
+
+.app-edit{
+  color: #cbcbcb; width: 20%; border-right: 1px solid #cbcbcb;
+}
+
+.app-remove{
+  color: #cbcbcb; width: 40%; border-right: 1px solid #cbcbcb;
+}
+
+.app-save{
+  color: #cbcbcb; width: 40%;
+}
+
+.app-input-text{
+  width: 50px;
+    outline: none;
+    height: 35px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 10px;
+}
+
+/*Media Queries*/
+@media only screen and (max-width: 780px){
+	.app-title {
+    font-size: 200%;
+  }
+
+  .app-item-table-container{
+    padding-top: 0;
+  }
+
+  .app-item-header-container{
+    border-top: 0;
+    height: 0;
+    border-bottom: 5px solid #cbcbcb !important;
+  }
+
+  .app-header-right-container{
+    display: none;
+    visibility: hidden;
+    width: 0;
+  }
+
+  .app-item-container-right{
+    position: absolute;;
+    z-index: 10000000;
+    padding-top: 15%;
+    padding-left: 25%;
+  }
+
+  .app-header-left-container {
+    width: 100%;
+    display: none;
+    visibility: hidden;
+    width: 0;
+  }
+
+  .app-width{
+    width: 100%;
+  }
+
+  .app-bottom-left-container{
+    display: none;
+  }
+
+  .app-bottom-right-container {
+    width: 100%;
+  }
+
+  .modal{
+    z-index: 1000000000000000 !important;
+    position: absolute !important;
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 580px){
+  .app-title {
+    font-size: 150%;
+  }
+
+  .app-item-table-container{
+    padding-top: 0;
+  }
+
+  .app-item-header-container{
+    border-top: 0;
+    height: 0;
+    border-bottom: 5px solid #cbcbcb !important;
+  }
+
+  .app-header-right-container{
+    display: none;
+    visibility: hidden;
+    width: 0;
+  }
+
+  .app-header-left-container {
+    width: 100%;
+    display: none;
+    visibility: hidden;
+    width: 0;
+  }
+
+  .app-bottom-left-container{
+    display: none;
+  }
+
+  .app-bottom-right-container {
+    width: 100%;
+  }
+
+  .app-promotext{
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .app-bottom-right-container{
+    display: block;
+  }
+
+  .app-prmotional-code{
+    display: block;
+  }
+
+  .app-applyCodeBtn {
+    width: 30%;
+    float: left;
+  }
+
+  .app-applycode {
+    width: 70%;
+    float: left;
+  }
+
+  .app-margin-top {
+    margin-top: 40px;
+  }
+
+  .app-applycode-box{
+    text-align: center;
+  }
+
+  .app-item-container-right{
+    position: absolute;;
+    z-index: 10000000;
+    padding-top: 20%;
+    padding-left: 40%;
+  }
+
+  .app-qty-item {
+    width: 100%;
+}
+
+}

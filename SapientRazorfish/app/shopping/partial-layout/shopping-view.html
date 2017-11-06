@@ -1,0 +1,108 @@
+﻿<div class="app-container-content">
+    <div ng-bind="vm.title" class="app-title"></div>
+    <div class="app-item-table-container">
+        <div class="app-item-header-container app-display-flex">
+            <div class="app-width app-header-left-container">
+                <div class="app-item-header app-item-count app-float-left" ng-bind="vm.itemCount"></div>
+            </div>
+            <div class="app-width app-header-right-container">
+                <div class="app-item-header app-item-size app-item-width" ng-bind="vm.sizeTitle"></div>
+                <div class="app-item-header app-item-qty app-item-width" ng-bind="vm.qtyTitle"></div>
+                <div class="app-item-header app-item-price app-item-width" ng-bind="vm.priceTitle"></div>
+            </div>
+        </div>
+        <div class="app-item-detail-conatiner">
+          <div class="app-item-container app-overflow app-dimension" ng-model="selectedItemModel" ng-repeat="data in vm.cart.productsInCart">
+            <div class="app-item-header-container app-display-flex app-border-bottom-none app-dimension">
+                <div class="app-width app-display-flex">
+                  <div class="app-item-left-container">
+                      <div class="app-image-conatiner">
+                        <img ng-src="assets/images/{{data.p_id}}.jpg" alt="" />
+                      </div>
+                  </div>
+                  <div class="app-item-right-container">
+                    <div class="app-details-conatiner">
+                        <div class="app-left-padding" ng-bind="vm.textUpperCase(data.p_name)"></div>
+                        <div class="app-color-text app-display-flex app-text-style-color">
+                          <div ng-bind="vm.styleText"></div>
+                          <div ng-bind="data.p_style"></div>
+                        </div>
+                        <div class="app-color-text app-display-flex app-text-style-color">
+                          <div ng-bind="vm.colorText"></div>
+                          <div ng-bind="data.p_selected_color.name"></div>
+                        </div>
+                    </div>
+                    <div class="app-modify">
+                      <div ng-bind="vm.editCart" ng-click="vm.onEdit(data)" class="app-float-left app-text-align app-edit"></div>
+                      <div ng-bind="vm.removeItem" ng-click="vm.removeSelectedItem(data)" class="app-float-left app-text-align app-remove"></div>
+                      <div ng-bind="vm.saveLater" class="app-float-left app-text-align app-save"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="app-width app-item-container-right">
+                    <div class="app-item-header app-item-size app-item-width" ng-bind="vm.sizeConversion(data.p_selected_size.code)"></div>
+                    <div class="app-item-header app-item-qty app-item-width">
+                        <input type="number" class="app-qty-item" ng-model="data.p_quantity"/>
+                    </div>
+                    <div class="app-item-header app-item-price app-item-width" >
+                      <div class="app-display-inline-flex app-text-align" ng-class="{'app-text-line-through' : data.p_originalprice !== data.p_price}">
+                        <div ng-bind="data.c_currency"></div>
+                        <div ng-bind="data.p_originalprice * data.p_quantity"></div>
+                      </div>
+                      <div class="app-display-inline-flex app-text-align" ng-if="data.p_originalprice !== data.p_price">
+                        <div ng-bind="data.c_currency"></div>
+                        <div ng-bind="data.p_price * data.p_quantity"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="app-horizontal-line"></div>
+        <div class="app-bottom-container">
+          <div class="app-bottom-left-container">
+            <div class="app-line-height" ng-bind="vm.appHelpText"></div>
+            <div class="app-line-height" ng-bind="vm.appCustomer"></div>
+            <div class="app-line-height"><a ng-bind="vm.chat"></a></div>
+            <div class="app-line-height"><a ng-bind="vm.return"></a></div>
+          </div>
+          <div class="app-bottom-right-container">
+            <div class="app-prmotional-code app-display-flex">
+              <div  class="app-promotext" ng-bind="vm.promoText"></div>
+              <div class="app-applycode"> <input type="text" class="app-applycode-box" ng-model="vm.applyCode"/></div>
+              <div class="app-applyCodeBtn"> <button class="btn-primary" ng-bind="vm.applyCodeText" ng-click=""/></div>
+            </div>
+            <div class="app-horizontal-line app-margin-top"></div>
+            <div class="app-total-coantainer">
+              <div class="app-float-left" ng-bind="vm.subtotalText"></div>
+              <div class="app-float-right" ng-bind="vm.subtotal()"></div>
+            </div>
+            <div class="app-total-coantainer">
+              <div class="app-float-left" ng-bind="vm.promoCodeText"></div>
+              <div class="app-float-right" ng-bind="vm.promoCode()"></div>
+            </div>
+            <div class="app-total-coantainer">
+              <div class="app-float-left" ng-bind="vm.shippingText"></div>
+              <div class="app-float-right" ng-bind="vm.shippingStatus"></div>
+            </div>
+            <div class="app-horizontal-line app-margin-top"></div>
+            <div class="app-total-coantainer">
+              <div class="app-float-left" ng-bind="vm.totalText"></div>
+              <div class="app-float-right" ng-bind="vm.estimatedTotal()"></div>
+            </div>
+            <div class="app-horizontal-line app-margin-top "></div>
+            <div class="app-continue-shopping">
+                <div class="app-float-right app-checkout-btn"><button class="btn-primary" ng-bind="vm.checkOut" ng-click=""/></div>
+                <div class="app-float-right"><a ng-bind="vm.continueShopping"></a></div>
+            </div>
+            <div class="app-secure-shopping">
+                <div class="app-float-right" ng-bind="vm.securetext"></div>
+                <div class="app-float-right app-secure-text"><img ng-src="assets/images/lock.jpg" alt="" /></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <modal confirm="vm.shoppingDailogConfirmed()" cancel="" modalobject="vm.shoppingDailog"></modal>
+    <modal confirm="vm.shoppingDailogConfirmed()" cancel="" modalobject="vm.editCartDailog"></modal>
+</div>

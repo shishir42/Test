@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app" ng-strict-di=ng-strict-di>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>Shopping</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+<body>
+    <!--Angular References-->
+    <script src="library/angular.min.js"></script>
+    <script src="library/angular-ui-router.min.js"></script>
+    <script src="library/ui-bootstrap-0.12.1.min.js"></script>
+    <script src="library/ui-router-styles.js"></script>
+
+    <!--Modal References-->
+    <script src="app/shared/modal/modalDialog.module.js"></script>
+    <script src="app/shared/modal/modalDialog.js"></script>
+
+    <!--Directives References-->
+    <script src="app.directives.js"></script>
+
+    <!--Services References-->
+    <script src="app.services.js"></script>
+
+    <!--Bootstrapping References-->
+    <script src="app.module.js"></script>
+
+    <!--Shopping References-->
+    <script src="app/shopping/shopping.module.js"></script>
+    <script src="app/shopping/shopping.router.js"></script>
+    <script src="app/shopping/shopping.js"></script>
+
+    <div id="viewContainer" ui-view></div>
+
+</body>
+</html>

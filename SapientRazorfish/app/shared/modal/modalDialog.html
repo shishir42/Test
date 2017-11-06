@@ -1,0 +1,17 @@
+﻿<div class="modal-header modal-header-container" ng-show="modalObject.title !== ''">
+    <h3 id="modalDialogTitle" class="modal-title modalmsgWrap ellipsis" ng-bind="modalObject.title"> </h3>
+</div>
+<ng-include src="modalObject.templateURL"></ng-include>
+<div ng-switch="modalObject.type">
+    <div class="modal-footer footer-align" ng-show="modalObject.confirmation">
+        <div class="footer-Btn reject-Btn-Container mi-button-link-container">
+            <button id="modalDialogRejectBtn" class="modal-footer-btn modal-reject-btn mi-button-link" ng-click="cancel()"><h3 class="ellipsis" ng-bind="modalObject.rejectcaption"></h3></button>
+        </div>
+        <div class="footer-Btn mi-button-link-container">
+            <button id="modalDialogAcceptBtn" class="modal-footer-btn modal-accept-btn mi-button-link" ng-click="ok()"><h3 class="ellipsis" ng-bind="modalObject.acceptcaption"></h3></button>
+        </div>
+    </div>
+    <div id="modalDialogAcceptBtn" class="modal-close-footer" ng-show="!modalObject.confirmation" ng-click="ok()">
+        <button class="mi-button-link">  <h3 class="ellipsis" ng-bind="modalObject.acceptcaption"></h3></button>
+    </div>
+</div>
